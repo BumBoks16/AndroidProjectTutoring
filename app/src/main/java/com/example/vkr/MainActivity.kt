@@ -17,6 +17,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.vkr.ui.screens.LoginScreen
 import com.example.vkr.ui.screens.MainScreen
+import com.example.vkr.ui.screens.PaymentScreen
 import com.example.vkr.ui.screens.RegisterScreen
 import com.example.vkr.ui.screens.SearchScreen
 import com.example.vkr.ui.screens.RepetitorScreen
@@ -49,13 +50,14 @@ fun AppNavigation() {
         composable("main") { MainScreen(navController = navController) }
         composable("search") { SearchScreen(navController = navController) }
         composable("repetitor") { RepetitorScreen(navController = navController) }
+        composable("payment") { PaymentScreen(navController = navController) }
     }
 }
 
-//@Preview(showBackground = true)
-//@Composable
-//fun DefaultPreview(mainViewModel: MainViewModel = hiltViewModel()) {
-//    VKRTheme {
-//        AppNavigation()
-//    }
-//}
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreview(mainViewModel: MainViewModel = hiltViewModel()) {
+    VKRTheme {
+        AppNavigation()
+    }
+}

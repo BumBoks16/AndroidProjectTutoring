@@ -66,14 +66,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.androidx.activity.compose.v130)
-
-    //implementation(libs.hilt.android)
     implementation(libs.androidx.hilt.navigation.compose)
-    //kapt(libs.hilt.compiler)
-
     implementation(libs.androidx.room.ktx)
     kapt(libs.androidx.room.compiler)
     implementation (libs.dagger.hilt.android.v2511)
     kapt (libs.hilt.compiler.v2511)
-    //kapt (libs.hilt.android.compiler)
 }

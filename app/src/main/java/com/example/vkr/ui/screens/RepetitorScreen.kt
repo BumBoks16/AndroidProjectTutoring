@@ -15,6 +15,7 @@ import com.example.vkr.R
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.vkr.MainViewModel
@@ -30,6 +31,7 @@ fun RepetitorScreen(navController: NavController, mainViewModel: MainViewModel =
     val description = remember { mutableStateOf("") }
     val keywords = remember { mutableStateOf("") }
     val experienceYears = remember { mutableStateOf("") }
+    val cost = remember { mutableStateOf("") }
 
     Column(
         modifier = Modifier
@@ -59,6 +61,7 @@ fun RepetitorScreen(navController: NavController, mainViewModel: MainViewModel =
                 Text(
                     text = "Добавление заявки",
                     color = Color.Black,
+                    fontSize = 20.sp,
                     style = TextStyles.NormalTextStyle,
                     modifier = Modifier.align(Alignment.Center)
                 )
@@ -105,13 +108,23 @@ fun RepetitorScreen(navController: NavController, mainViewModel: MainViewModel =
         )
 
         Spacer(modifier = Modifier.height(8.dp))
+        OutlinedTextField(
+            value = cost.value,
+            onValueChange = { cost.value = it },
+            label = { Text("Цена занятия", style = TextStyles.NormalTextStyle) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 12.dp)
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
         Button(
             onClick = {
                 val record = Record(
                     fullName = fullName.value,
                     description = description.value,
                     keywords = keywords.value,
-                    experienceYears = experienceYears.value.toIntOrNull() ?: 0 // или любое значение по умолчанию
+                    experienceYears = experienceYears.value.toIntOrNull() ?: 0, // или любое значение по умолчанию
                 )
                 mainViewModel.insert(record)
             },
@@ -124,7 +137,7 @@ fun RepetitorScreen(navController: NavController, mainViewModel: MainViewModel =
                 contentColor = Color.White
             )
         ) {
-            Text("Создание профиля репетитора", style = TextStyles.NormalTextStyle)
+            Text("Создание заявки занятия", style = TextStyles.NormalTextStyle)
         }
     }
 }

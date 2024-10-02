@@ -71,11 +71,9 @@ fun MainScreen(navController: NavController) {
                 Spacer(modifier = Modifier.height(16.dp))
 
                 Column(modifier = Modifier.fillMaxWidth()) {
-                    MenuItem(navController, "Поиск преподавателя", "Search")
                     MenuItem(navController, "Запись на урок", "Search")
                     MenuItem(navController, "Добавление заявки", "Repetitor")
-                    MenuItem(navController, "Предметы", "Search")
-                    MenuItem(navController, "Оплата", "Search")
+                    MenuItem(navController, "Оплата", "Payment")
                 }
                 Row(
                     modifier = Modifier

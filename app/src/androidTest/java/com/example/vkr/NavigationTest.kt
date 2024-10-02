@@ -22,6 +22,5 @@ class NavigationTest {
 
     @Test
     fun testNavigation() {
-        // Просто убедимся, что код не вызывает ошибок
     }
 }
