@@ -1,6 +1,6 @@
 <h1 align="center">AndroidProjectTutoring</h1>
 
-<img align="left" width="80" height="80" src="misc/collage.png">
+<img align="left" width="1920" height="1080" src="misc/collage.png">
 
 ## Technologies
 - 100% Kotlin
